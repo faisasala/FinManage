@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing - FinManage</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+    :root {
+      --background: 0 0% 85%;
+      --foreground: 0 0% 10%;
+      --primary: 0 0% 80%;
+      --primary-foreground: 0 0% 10%;
+      --secondary: 0 0% 70%;
+      --secondary-foreground: 0 0% 10%;
+      --accent: 240 100% 50%;
+      --accent-foreground: 0 0% 100%;
+      --destructive: 0 84% 32%;
+      --destructive-foreground: 0 0% 98%;
+      --muted: 0 0% 75%;
+      --muted-foreground: 0 0% 10%;
+      --card: 0 0% 95%;
+      --card-foreground: 0 0% 10%;
+      --popover: 0 0% 100%;
+      --popover-foreground: 240 10% 3.9%;
+      --border: 0 0% 60%;
+      --input: 0 0% 60%;
+      --ring: 0 0% 10%;
+      --radius: 0rem;
+    }
+
+    body {
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .antialiased {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <div class="flex flex-col min-h-screen bg-white">
+    <header class="bg-black text-white py-4 px-6 flex items-center justify-center">
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-sm font-medium hover:underline">Home</a>
+        <a href="about.html" class="text-sm font-medium hover:underline">About Us</a>
+        <a href="services.html" class="text-sm font-medium hover:underline">Services</a>
+        <a href="pricing.html" class="text-sm font-medium hover:underline">Pricing</a>
+        <a href="signin.html" class="text-sm font-medium hover:underline">Sign In</a>
+        <a href="signup.html" class="text-sm font-medium hover:underline">Sign Up</a>
+      </div>
+    </header>
+    <main class="flex-grow flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+      <div class="max-w-3xl w-full space-y-8">
+        <h1 class="text-3xl font-bold text-center">Pricing</h1>
+        <p class="text-center">Choose the plan that's right for you.</p>
+        <div class="grid gap-8 md:grid-cols-3">
+          <div class="bg-card border-card rounded-lg p-6 text-center">
+            <h2 class="text-xl font-bold">Personal</h2>
+            <p class="mt-2 text-2xl">$9/mo</p>
+            <p class="mt-4 text-muted-foreground">Perfect for individuals looking to manage their personal finances.</p>
+            <ul class="mt-4 space-y-2">
+              <li class="text-muted-foreground">✓ Expense Tracking</li>
+              <li class="text-muted-foreground">✓ Budgeting Tools</li>
+              <li class="text-muted-foreground">✓ Credit Score Monitoring</li>
+              <li class="text-muted-foreground">✓ Basic Reporting</li>
+            </ul>
+            <a href="payment.html" class="mt-6 inline-block bg-primary text-primary-foreground py-2 px-4 rounded">Get Started</a>
+          </div>
+          <div class="bg-card border-card rounded-lg p-6 text-center">
+            <h2 class="text-xl font-bold">Small Business</h2>
+            <p class="mt-2 text-2xl">$49/mo</p>
+            <p class="mt-4 text-muted-foreground">Designed for small businesses to manage their finances.</p>
+            <ul class="mt-4 space-y-2">
+              <li class="text-muted-foreground">✓ Invoicing and Billing</li>
+              <li class="text-muted-foreground">✓ Expense Tracking</li>
+              <li class="text-muted-foreground">✓ Payroll Management</li>
+              <li class="text-muted-foreground">✓ Advanced Reporting</li>
+            </ul>
+            <a href="payment.html" class="mt-6 inline-block bg-primary text-primary-foreground py-2 px-4 rounded">Get Started</a>
+          </div>
+          <div class="bg-card border-card rounded-lg p-6 text-center">
+            <h2 class="text-xl font-bold">Enterprise</h2>
+            <p class="mt-2 text-2xl">$199/mo</p>
+            <p class="mt-4 text-muted-foreground">Tailored for larger businesses with complex financial needs.</p>
+            <ul class="mt-4 space-y-2">
+              <li class="text-muted-foreground">✓ Dedicated Account Manager</li>
+              <li class="text-muted-foreground">✓ Custom Reporting and Analytics</li>
+              <li class="text-muted-foreground">✓ Advanced Tax Planning</li>
+              <li class="text-muted-foreground">✓ Compliance and Audit Support</li>
+            </ul>
+            <a href="payment.html" class="mt-6 inline-block bg-primary text-primary-foreground py-2 px-4 rounded">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-black text-white py-4 px-6 flex items-center justify-center">
+      <div class="flex items-center gap-4">
+        <a href="#" class="text-sm font-medium hover:underline">Privacy</a>
+        <a href="#" class="text-sm font-medium hover:underline">Terms</a>
+        <a href="#" class="text-sm font-medium hover:underline">Support</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

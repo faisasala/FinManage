@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - FinManage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+        :root {
+            --background: 0 0% 85%;
+            --foreground: 0 0% 10%;
+            --primary: 0 0% 80%;
+            --primary-foreground: 0 0% 10%;
+            --secondary: 0 0% 70%;
+            --secondary-foreground: 0 0% 10%;
+            --accent: 240 100% 50%;
+            --accent-foreground: 0 0% 100%;
+            --destructive: 0 84% 32%;
+            --destructive-foreground: 0 0% 98%;
+            --muted: 0 0% 75%;
+            --muted-foreground: 0 0% 10%;
+            --card: 0 0% 95%;
+            --card-foreground: 0 0% 10%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 240 10% 3.9%;
+            --border: 0 0% 60%;
+            --input: 0 0% 60%;
+            --ring: 0 0% 10%;
+            --radius: 0rem;
+        }
+
+        * {
+            border: var(--border);
+        }
+
+        body {
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            font-family: 'IBM Plex Mono', monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .antialiased {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .min-h-screen {
+            min-height: 100vh;
+        }
+
+        .bg-background {
+            background-color: hsl(var(--background));
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .py-12 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .sm\:px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .lg\:px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .max-w-sm {
+            max-width: 480px;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .space-y-6 > :not([hidden])~:not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+        }
+
+        .space-y-4 > :not([hidden])~:not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+        }
+
+        .space-y-2 > :not([hidden])~:not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .text-muted-foreground {
+            color: hsl(var(--muted-foreground));
+        }
+
+        .h-8 {
+            height: 2rem;
+        }
+
+        .w-auto {
+            width: auto;
+        }
+
+        .mr-2 {
+            margin-right: 0.5rem;
+        }
+
+        .bg-card {
+            background-color: hsl(var(--card));
+        }
+
+        .border-card {
+            border-color: hsl(var(--border));
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .border {
+            border-width: 1px;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .font-heading {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .font-body {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn-primary {
+            background-color: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid hsl(var(--border));
+            color: hsl(var(--foreground));
+        }
+
+        .btn:hover {
+            background-color: hsl(var(--accent));
+            color: hsl(var(--accent-foreground));
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input {
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid hsl(var(--input));
+            border-radius: 0.25rem;
+        }
+
+        .form-select {
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid hsl(var(--input));
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <div class="flex flex-col items-center justify-center min-h-screen bg-background px-4 py-12 sm:px-6 lg:px-8">
+        <div class="max-w-sm w-full space-y-6">
+            <div class="flex items-center justify-between">
+                <a href="#">
+                    <svg class="h-8 w-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                        <line x1="4" x2="4" y1="22" y2="15" />
+                    </svg>
+                </a>
+                <div class="flex items-center">
+                    <svg class="h-8 w-auto mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+                    </svg>
+                    <p class="text-muted-foreground">Secure payment processing</p>
+                </div>
+            </div>
+            <div class="bg-card border-card rounded-lg p-4">
+                <div class="space-y-4">
+                    <h1 class="font-heading">Complete your payment</h1>
+                    <p class="text-muted-foreground">Enter your payment details to finalize your transaction.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label for="card-number" class="form-label">Card number</label>
+                            <input id="card-number" type="text" placeholder="0000 0000 0000 0000" class="form-input">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="expiry" class="form-label">Expiry date</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <select id="expiry-month" class="form-select">
+                                    <option value="" disabled selected>MM</option>
+                                    ${Array.from({
+                                            length: 12
+                                        }, (_, i) => `<option value="${i + 1}">${String(i + 1).padStart(2, "0")}</option>`).join('')}
+                                </select>
+                                <select id="expiry-year" class="form-select">
+                                    <option value="" disabled selected>YY</option>
+                                    ${Array.from({
+                                            length: 10
+                                        }, (_, i) => `<option value="${i + 2023}">${i + 2023}</option>`).join('')}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input id="cvv" type="text" placeholder="123" class="form-input">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="name" class="form-label">Cardholder name</label>
+                        <input id="name" type="text" placeholder="John Doe" class="form-input">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a href="paymentconfirm.html" class="btn btn-primary w-full">Pay now</a>
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="h-px flex-1 bg-muted"></div>
+                            <p class="text-muted-foreground">or</p>
+                            <div class="h-px flex-1 bg-muted"></div>
+                        </div>
+                        <button class="btn btn-outline w-full">
+                            <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"></path>
+                                <path d="M10 2c1 .5 2 2 2 5"></path>
+                            </svg>
+                            Pay with Apple Pay
+                        </button>
+                        <button class="btn btn-outline w-full">
+                            <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                                <line x1="2" x2="22" y1="10" y2="10"></line>
+                            </svg>
+                            Pay with Google Pay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

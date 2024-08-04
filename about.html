@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - FinManage</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      margin: 0;
+      padding: 0;
+      background-color: hsl(0, 0%, 85%);
+      color: hsl(0, 0%, 10%);
+    }
+    header, footer {
+      background-color: black;
+      color: white;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header nav a, footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+    header nav a:hover, footer a:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+    .card {
+      border: 1px solid hsl(0, 0%, 60%);
+      background-color: hsl(0, 0%, 95%);
+      padding: 16px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .avatar {
+      border: 1px solid hsl(0, 0%, 60%);
+      padding: 16px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .button {
+      background-color: hsl(240, 100%, 50%);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+    .button-outline {
+      background-color: transparent;
+      border: 1px solid hsl(0, 0%, 60%);
+      color: hsl(0, 0%, 10%);
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+      </svg>
+      <h1>FinManage</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="signin.html">Sign In</a>
+      <button class="button" onclick="location.href='signup.html'">Sign Up</button>
+    </nav>
+  </header>
+  <main>
+    <div class="card">
+      <h2>About FinManage</h2>
+      <p>FinManage is a financial management platform that helps individuals and small businesses take control of their finances. Our mission is to simplify the complexities of personal and business finance, empowering our users to make informed decisions and achieve their financial goals.</p>
+    </div>
+    <div class="card">
+      <h3>Our Goals</h3>
+      <p>Our goals are to continually improve our platform, add new features, and provide exceptional customer service. We're committed to helping our users simplify their finances and make informed decisions that will lead to long-term financial success.</p>
+    </div>
+    <div class="card">
+      <h3>Our Team</h3>
+      <p>FinManage is led by a team of experienced finance and technology professionals. Our team is passionate about helping our users achieve their financial goals and is dedicated to providing exceptional customer service.</p>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+        <div>
+          <div class="avatar">JD</div>
+          <h4>John Doe</h4>
+          <p>CEO</p>
+        </div>
+        <div>
+          <div class="avatar">JS</div>
+          <h4>Jane Smith</h4>
+          <p>CTO</p>
+        </div>
+        <div>
+          <div class="avatar">BJ</div>
+          <h4>Bob Johnson</h4>
+          <p>CFO</p>
+        </div>
+        <div>
+          <div class="avatar">SL</div>
+          <h4>Sarah Lee</h4>
+          <p>COO</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Our Purpose</h3>
+      <p>Our purpose is to empower individuals and small businesses to take control of their financial lives. We believe that everyone deserves access to user-friendly financial management tools that can help them achieve their financial goals.</p>
+    </div>
+  </main>
+  <footer>
+    <div>
+      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+      </svg>
+      <span>FinManage</span>
+    </div>
+    <div>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Support</a>
+    </div>
+  </footer>
+</body>
+</html>
